@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="650.0" maxWidth="1200.0" minHeight="650.0" minWidth="1200.0" prefHeight="650.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mazerunner.controller.FXMLDocumentController">
+   <children>
+      <Pane fx:id="startPane" maxHeight="650.0" maxWidth="1200.0" minHeight="650.0" minWidth="1200.0" prefHeight="650.0" prefWidth="1200.0" style="-fx-background-color: #e9e9e9;">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="279.0" layoutY="79.0" prefHeight="70.0" prefWidth="642.0" text="Maze Runner" textFill="#5e5e5e">
+               <font>
+                  <Font name="MAZE RUNNER" size="60.0" />
+               </font>
+            </Label>
+            <Button fx:id="newGameBtn" layoutX="465.0" layoutY="209.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="63.0" prefWidth="271.0" style="-fx-background-color: #878787; -fx-background-radius: 30px;" styleClass="startBtn" text="New Game" textFill="WHITE">
+               <font>
+                  <Font name="MAZE RUNNER" size="21.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="loadGameBtn" layoutX="465.0" layoutY="310.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="63.0" prefWidth="271.0" style="-fx-background-color: #878787; -fx-background-radius: 30px;" styleClass="startBtn" text="Load Game" textFill="WHITE">
+               <font>
+                  <Font name="MAZE RUNNER" size="21.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="howToPlayBtn" layoutX="465.0" layoutY="404.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="63.0" prefWidth="271.0" style="-fx-background-color: #878787; -fx-background-radius: 30px;" styleClass="startBtn" text="How To Play" textFill="WHITE">
+               <font>
+                  <Font name="MAZE RUNNER" size="21.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="settingsBtn" layoutX="465.0" layoutY="501.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="63.0" prefWidth="271.0" style="-fx-background-color: #878787; -fx-background-radius: 30px;" styleClass="startBtn" text="Settings" textFill="WHITE">
+               <font>
+                  <Font name="MAZE RUNNER" size="21.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ImageView fx:id="startRunning" fitHeight="172.0" fitWidth="174.0" layoutX="782.0" layoutY="310.0">
+               <image>
+                  <Image url="@running.gif" />
+               </image></ImageView>
+            <ImageView fx:id="startFlying" fitHeight="165.0" fitWidth="213.0" layoutX="201.0" layoutY="255.0">
+               <image>
+                  <Image url="@flying.gif" />
+               </image></ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="settingsPane" maxHeight="650.0" maxWidth="1200.0" minHeight="650.0" minWidth="1200.0" prefHeight="650.0" prefWidth="1200.0" style="-fx-background-color: #e9e9e9;" visible="false">
+         <children>
+            <Button fx:id="settingsBackBtn" layoutX="15.0" layoutY="15.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="75.0" style="-fx-background-color: #878787;" styleClass="startBtn" text="Back" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="MAZE RUNNER" size="13.0" />
+               </font>
+            </Button>
+            <ComboBox fx:id="difficulty" layoutX="408.0" layoutY="117.0" prefHeight="50.0" prefWidth="339.0" promptText="Difficulty" style="-fx-background-color: lightblue; -fx-border-color: black;" />
+            <ColorPicker fx:id="color" layoutX="408.0" layoutY="214.0" prefHeight="50.0" prefWidth="339.0" promptText="Maze Background" style="-fx-background-color: lightpink; -fx-border-color: black;" />
+            <ImageView fx:id="maleChar" fitHeight="220.0" fitWidth="200.0" layoutX="331.0" layoutY="315.0" onMouseClicked="#maleCharClick" pickOnBounds="true" preserveRatio="true" styleClass="chars">
+               <image>
+                  <Image url="@1.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="femaleChar" fitHeight="220.0" fitWidth="200.0" layoutX="665.0" layoutY="315.0" onMouseClicked="#femaleCharClick" pickOnBounds="true" preserveRatio="true" styleClass="chars">
+               <image>
+                  <Image url="@2.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children></Pane>
+      <Pane fx:id="howToPlayPane" maxHeight="650.0" maxWidth="1200.0" minHeight="650.0" minWidth="1200.0" prefHeight="650.0" prefWidth="1200.0" style="-fx-background-color: #e9e9e9;" visible="false">
+         <children>
+            <Label layoutX="100.0" layoutY="376.0" prefHeight="41.0" prefWidth="970.0" text="you can claim some gifts at your way." textAlignment="CENTER" translateY="50.0">
+               <font>
+                  <Font name="MAZE RUNNER" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="100.0" layoutY="204.0" prefHeight="41.0" prefWidth="970.0" text="use space bar to fire your bullets." textAlignment="CENTER" translateY="50.0">
+               <font>
+                  <Font name="MAZE RUNNER" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="100.0" layoutY="262.0" prefHeight="41.0" prefWidth="970.0" text="reach the door at the end of the maze to win." textAlignment="CENTER" translateY="50.0">
+               <font>
+                  <Font name="MAZE RUNNER" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="100.0" layoutY="319.0" prefHeight="41.0" prefWidth="970.0" text="You can destroy wood walls, monsters, bombs and gifts!" textAlignment="CENTER" translateY="50.0">
+               <font>
+                  <Font name="MAZE RUNNER" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="100.0" layoutY="93.0" prefHeight="41.0" prefWidth="970.0" text="Use keyboard arrows to move in all 4 directions." textAlignment="CENTER" translateY="50.0">
+               <font>
+                  <Font name="MAZE RUNNER" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="100.0" layoutY="148.0" prefHeight="41.0" prefWidth="970.0" text="Bombs and monsters may hurt you!" translateY="50.0">
+               <font>
+                  <Font name="MAZE RUNNER" size="20.0" />
+               </font>
+            </Label>
+            <Button fx:id="howBackBtn" layoutX="15.0" layoutY="15.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="75.0" style="-fx-background-color: #878787;" styleClass="startBtn" text="Back" textFill="WHITE">
+               <font>
+                  <Font name="MAZE RUNNER" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children></Pane>
+      <GridPane fx:id="gamePane" maxHeight="650.0" maxWidth="1200.0" minHeight="650.0" minWidth="1200.0" onKeyPressed="#handleKeyPress" prefHeight="650.0" prefWidth="1200.0" style="-fx-background-color: #e9e9e9;" visible="false">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="100.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="600.0" minHeight="600.0" prefHeight="600.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Pane prefHeight="50.0" prefWidth="1136.0">
+               <children>
+                  <Pane layoutX="200.0" maxHeight="50.0" maxWidth="800.0" minHeight="50.0" minWidth="800.0" prefHeight="50.0" prefWidth="800.0" style="-fx-background-color: #878787; -fx-background-radius: 0 0 20 20;">
+                     <children>
+                        <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="40.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@time.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="timeLabel" layoutX="83.0" layoutY="2.0" prefHeight="50.0" prefWidth="115.0" text="0">
+                           <font>
+                              <Font name="MAZE RUNNER" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="healthLabel" layoutX="296.0" layoutY="2.0" prefHeight="50.0" prefWidth="115.0" text="100">
+                           <font>
+                              <Font name="MAZE RUNNER" size="20.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="251.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@health.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="463.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@bullet.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="bulletLabel" layoutX="503.0" layoutY="1.0" prefHeight="50.0" prefWidth="115.0" text="06">
+                           <font>
+                              <Font name="MAZE RUNNER" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="scoreLabel" layoutX="698.0" layoutY="3.0" prefHeight="50.0" prefWidth="115.0" text="000">
+                           <font>
+                              <Font name="MAZE RUNNER" size="20.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="656.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@score.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Button fx:id="pauseBtn" layoutX="1140.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="60.0" style="-fx-background-color: #878787; -fx-background-radius: 0 0 0 20;" styleClass="startBtn" text="| |">
+                     <font>
+                        <Font name="MAZE RUNNER" size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane fx:id="canvasPane" maxHeight="600.0" maxWidth="1200.0" minHeight="600.0" minWidth="1200.0" prefHeight="600.0" prefWidth="1200.0" GridPane.rowIndex="1">
+               <children>
+                  <Canvas fx:id="canvas" height="600.0" width="1200.0" />
+               </children>
+            </Pane>
+         </children>
+      </GridPane>
+      <Pane fx:id="pausePane" maxHeight="650.0" maxWidth="1200.0" minHeight="650.0" minWidth="1200.0" prefHeight="650.0" prefWidth="1200.0" style="-fx-background-color: black; -fx-opacity: 0.8px;" visible="false">
+         <children>
+            <Button fx:id="continueBtn" layoutX="450.0" layoutY="152.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="271.0" style="-fx-background-color: #878787; -fx-background-radius: 30px;" styleClass="startBtn" text="Continue" textFill="WHITE">
+               <font>
+                  <Font name="MAZE RUNNER" size="21.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="saveBtn" layoutX="450.0" layoutY="258.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="271.0" style="-fx-background-color: #878787; -fx-background-radius: 30px;" styleClass="startBtn" text="save" textFill="WHITE">
+               <font>
+                  <Font name="MAZE RUNNER" size="21.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="quitBtn" layoutX="450.0" layoutY="363.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="271.0" style="-fx-background-color: #878787; -fx-background-radius: 30px;" styleClass="startBtn" text="quit" textFill="WHITE">
+               <font>
+                  <Font name="MAZE RUNNER" size="21.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label fx:id="gameSavedLabel" layoutX="441.0" layoutY="502.0" prefHeight="41.0" prefWidth="271.0" text="Game saved" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="MAZE RUNNER" size="29.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <Pane fx:id="winPane" prefHeight="650.0" prefWidth="1200.0" style="-fx-background-color: black; -fx-opacity: 0.9;" visible="false">
+         <children>
+            <Label layoutX="354.0" layoutY="129.0" prefHeight="84.0" prefWidth="528.0" text="you win!" textFill="WHITE">
+               <font>
+                  <Font name="MAZE RUNNER" size="70.0" />
+               </font>
+            </Label>
+            <Button fx:id="winExitBtn" layoutX="475.0" layoutY="319.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="213.0" style="-fx-background-color: #878787; -fx-background-radius: 30px;" styleClass="startBtn" text="Exit">
+               <font>
+                  <Font name="MAZE RUNNER" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="losePane" prefHeight="650.0" prefWidth="1200.0" style="-fx-background-color: black; -fx-opacity: 0.9;" visible="false">
+         <children>
+            <Label layoutX="322.0" layoutY="129.0" prefHeight="84.0" prefWidth="599.0" text="you lose :(" textFill="WHITE">
+               <font>
+                  <Font name="MAZE RUNNER" size="70.0" />
+               </font>
+            </Label>
+            <Button fx:id="loseExitBtn" layoutX="475.0" layoutY="319.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="213.0" style="-fx-background-color: #878787; -fx-background-radius: 30px;" styleClass="startBtn" text="Exit">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="MAZE RUNNER" size="24.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
