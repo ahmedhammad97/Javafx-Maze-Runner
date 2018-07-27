@@ -15,4 +15,4 @@ A simple game with a single a player, who tries to reach the end of the maze, wh
 ## Technical Features:
 - MVC pattern
 - Many Design patterns applied to optimize the design.
-- Multi-Threading used manage different clocks at the same time.
+- Multi-Threading used to manage different clocks at the same time.
